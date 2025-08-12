@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Professional To-Do List</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-tasks"></i> TaskFlow</h1>
+            <p>Organize your day, accomplish your goals</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" id="taskInput" placeholder="What needs to be done today?" maxlength="200">
+                <button class="add-btn" onclick="addTask()">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number" id="totalTasks">0</span>
+                    Total Tasks
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="completedTasks">0</span>
+                    Completed
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="pendingTasks">0</span>
+                    Pending
+                </div>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterTasks('all')">All</button>
+                <button class="filter-btn" onclick="filterTasks('pending')">Pending</button>
+                <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+            </div>
+
+            <div class="section-title">
+                <i class="fas fa-clipboard-list"></i>
+                Your Tasks
+            </div>
+            <ul class="task-list" id="taskList">
+                <!-- Tasks will be dynamically added here -->
+            </ul>
+
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>No tasks yet</h3>
+                <p>Add a task above to get started on your productive day!</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
